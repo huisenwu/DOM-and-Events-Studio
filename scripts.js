@@ -21,23 +21,25 @@ window.addEventListener("load", event => {
     const bottomLimit = shuttle.offsetHeight - rocket.offsetHeight;
     const leftLimit = -rocket.offsetLeft;
     const rightLimit = shuttle.offsetWidth - rocket.offsetLeft - rocket.offsetWidth;
+    rocket.style.top = 0;
+    rocket.style.left = 0;
     up.addEventListener("click", () => {
-        const x = parseInt(rocket.style.top) || 0;
+        const x = parseInt(rocket.style.top);
         const position = x < topLimit + 10 ? topLimit : x - 10;
         rocket.style.top = position + "px";
     });
     down.addEventListener("click", () => {
-        const x = parseInt(rocket.style.top) || 0;
+        const x = parseInt(rocket.style.top);
         const position = x > bottomLimit - 10 ? bottomLimit : x + 10;
         rocket.style.top = position + "px";
     });
     left.addEventListener("click", () => {
-        const y = parseInt(rocket.style.left) || 0;
+        const y = parseInt(rocket.style.left);
         const position = y < leftLimit + 10 ? leftLimit : y - 10;
         rocket.style.left = position + "px";
     });
     right.addEventListener("click", () => {
-        const y = parseInt(rocket.style.left) || 0;
+        const y = parseInt(rocket.style.left);
         const position = y > rightLimit - 10 ? rightLimit : y + 10;
         rocket.style.left = position + "px";
     });
